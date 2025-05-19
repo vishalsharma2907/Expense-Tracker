@@ -36,6 +36,7 @@ const ExpenseList = () => {
           >
             <div>
               <p className="font-medium">{exp.title}</p>
+              <p className="text-sm text-gray-500">{exp.date}</p> 
               <p className="text-sm text-gray-600 italic">
                 ₹{exp.amount} ({exp.type})
               </p>

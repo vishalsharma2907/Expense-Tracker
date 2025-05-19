@@ -18,12 +18,17 @@ const ExpenseForm = () => {
       toast.error("Please fill out both fields");
       return;
     }
+    const now = new Date()
+    const formattedDate = now.toLocaleString("en-IN", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
     const newExpense  = {
       id: Date.now(),
       title,
       amount: parseFloat(amount),
       type,
-      date: new Date().toISOString().split("T")[0]
+      date: formattedDate,
     };
 
     dispatch(addExpense(newExpense ));
