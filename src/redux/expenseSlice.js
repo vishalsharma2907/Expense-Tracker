@@ -3,16 +3,15 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 //!Load from localStorage
-const loadFromLOcalStorage=()=>{
+const loadFromLOcalStorage = () => {
   try {
-    const data=localStorage.getItem("expenses")
-    return data? JSON.parse(data):[];
-
+    const data = localStorage.getItem("expenses");
+    return data ? JSON.parse(data) : [];
   } catch (error) {
     console.error("Error loading from localStorage", error);
     return [];
   }
-}
+};
 
 //!Save to localStorage
 const saveToLocalStorage = (expenses) => {
@@ -50,8 +49,17 @@ const expenseSlice = createSlice({
       state.expenses = [];
       saveToLocalStorage(state.expenses);
     },
+    editExpenses: (state, action) => {
+      const { id, updatedData } = action.payload;
+      const index = state.expenses.findIndex((expense) => expense.id === id);
+      if (index !== -1) {
+        state.expenses[index] = { ...state.expenses[index], ...updatedData };
+        saveToLocalStorage(state.expenses);
+      }
+    },
   },
 });
 
-export const { addExpense, deleteExpense ,clearAllExpenses} = expenseSlice.actions;
+export const { addExpense, deleteExpense, clearAllExpenses,editExpenses } =
+  expenseSlice.actions;
 export default expenseSlice.reducer;
