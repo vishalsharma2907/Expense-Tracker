@@ -1,12 +1,58 @@
-# React + Vite
+# 💸 Expense Tracker App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and modern **Expense Tracker** built with **React**, **Redux Toolkit**, and **Tailwind CSS** to help you manage your income and expenses with ease — all in one place.
 
-Currently, two official plugins are available:
+Deployed live: 👉 [expense-tracker-sheeraz.vercel.app](https://expense-tracker-ruddy-nu.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📸 Screenshot
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Expense Tracker Screenshot/Home](./Home.png)
+![Expense Tracker Screenshot/Expense](./Expense.png)
+
+---
+
+## 🚀 Features
+
+- ✍️ **Add/Edit/Delete** your income & expenses
+- 📊 Real-time **balance** updates
+- 🧠 Inline editing for a seamless experience
+- 🕓 Tracks each transaction with a **timestamp**
+- 👋 Personalized greeting with user’s name
+- 🔐 **Login/Signup system** with session-based auth (no Firebase)
+- 🌈 Fully responsive with Tailwind CSS
+- ☁️ **LocalStorage** for offline persistence
+- 🧭 Navigation with React Router + protected routes
+
+---
+
+## 🔧 Tech Stack
+
+- ⚛️ React
+- 📦 Redux Toolkit
+- 🎨 Tailwind CSS
+- 🔁 React Router
+- 🍞 React Hot Toast (for beautiful alerts)
+- 🛠️ LocalStorage (for auth and data)
+- 🔄 Vercel for deployment
+
+---
+
+## 🧪 Demo
+
+Try it live:  
+🔗 [https://expense-tracker-ruddy-nu.vercel.app](https://expense-tracker-ruddy-nu.vercel.app)
+
+---
+
+## ✨ Getting Started (Local Setup)
+
+```bash
+git clone https://github.com/your-username/expense-tracker.git
+cd expense-tracker
+npm install
+npm run dev
+
+## 👨‍💻 Author
+Made with ❤️ by Sheeraz Amin Dharekar
