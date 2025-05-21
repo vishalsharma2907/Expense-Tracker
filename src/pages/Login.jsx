@@ -20,7 +20,7 @@ const Login = () => {
      if (existingUser) {
       localStorage.setItem("currentUser", JSON.stringify(existingUser));
       toast.success("Logged in successfully!");
-      navigate("/"); // redirect to Home or Expenses
+      navigate("/"); // redirect to Home
     } else {
       toast.error("Invalid email or password.");
     }
