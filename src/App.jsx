@@ -8,6 +8,9 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Expenses from './pages/Expenses'
 import { Toaster } from 'react-hot-toast'
+import Signup from './pages/Signup'
+import Login from './pages/Login'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const router=createBrowserRouter([
   {
@@ -33,10 +36,33 @@ const router=createBrowserRouter([
     element :(
       <>
       <Navbar/>
+      <ProtectedRoute>
       <Expenses/>
+      </ProtectedRoute>
       </>
     ),
   },
+
+  {
+    path:"/signup",
+    element :(
+      <>
+      <Navbar/>
+      <Signup/>
+      </>
+    ),
+  },
+   {
+    path:"/login",
+    element :(
+      <>
+      <Navbar/>
+      <Login/>
+      </>
+    ),
+  },
+
+
 ])
 const App = () => {
   return (
