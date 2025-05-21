@@ -66,7 +66,7 @@ const ExpenseList = () => {
         {expenses.map((exp) => (
           <li
             key={exp.id}
-            className={`flex justify-between p-3 rounded border ${
+            className={`flex flex-col sm:flex-row justify-between p-3 rounded border ${
               exp.type === "income" ? "bg-green-100" : "bg-red-100"
             }`}
           >
@@ -77,13 +77,13 @@ const ExpenseList = () => {
                     type="text"
                     value={editedTitle}
                     onChange={(e) => setEditedTitle(e.target.value)}
-                    className="p-1 rounded border border-gray-500"
+                    className="p-1 rounded border border-gray-500 w-full sm:w-auto"
                   />
                   <input
                     type="number"
                     value={editedAmount}
                     onChange={(e) => setEditedAmount(e.target.value)}
-                    className="p-1 rounded border border-gray-500 w-24"
+                    className="p-1 rounded border border-gray-500 w-full sm:w-24 "
                   />
                 </div>
               ) : (
@@ -97,18 +97,18 @@ const ExpenseList = () => {
               )}
             </div>
 
-            <div className="flex items-center gap-2 ml-4">
+            <div className="flex  flex-wrap sm:flex-nowrap items-center gap-2 ml-4">
               {editingId === exp.id ? (
                 <>
                   <button 
-                  className="bg-green-500 text-white px-2 py-1 rounded"
+                  className="bg-green-500 text-white px-3 py-1 rounded"
                   onClick={()=>handleSave(exp.id)}
                   >
                     Save
                   </button>
 
                   <button 
-                  className="bg-gray-400 text-white px-2 py-1 rounded"
+                  className="bg-gray-400 text-white px-3 py-1 rounded"
                   onClick={handleCancel}
                   >
                     Cancel
@@ -117,7 +117,7 @@ const ExpenseList = () => {
               ) : (
                 <>
                   <button 
-                  className="bg-yellow-500 text-white px-2 py-1 rounded"
+                  className="bg-yellow-500 text-white px-3 py-1 rounded"
                   onClick={()=>startEditing(exp)}
                   >
                     Edit
