@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom'
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { ImCross } from "react-icons/im";
+import { FaArrowRight } from 'react-icons/fa';
 
 const Navbar = () => {
 
