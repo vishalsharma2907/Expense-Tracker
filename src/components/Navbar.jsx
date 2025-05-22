@@ -20,6 +20,11 @@ const Navbar = () => {
     <div className='bg-gradient-to-r from-blue-200 to-indigo-600 shadow-md'>
       <div className='max-w-7xl mx-auto px-4 py-3 flex items-center justify-between'>
         <div className='text-white text-lg font-bold'>Expense Tracker <FaArrowRight className='inline ml-2'/></div>
+        {currentUser && !isOpen && (
+        <span className="text-white text-sm font-medium sm:hidden">
+            Welcome,<strong className="underline decoration-white">{currentUser.email.split("@")[0]}</strong>
+          </span>
+        )}
         <div className='sm:hidden'>
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? (
