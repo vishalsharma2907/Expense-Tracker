@@ -10,7 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin=(e)=>{
+  const handleLogin= async (e)=>{
     e.preventDefault()
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const existingUser = users.find(
@@ -21,6 +21,21 @@ const Login = () => {
       localStorage.setItem("currentUser", JSON.stringify(existingUser));
       toast.success("Logged in successfully!");
       navigate("/"); // redirect to Home
+
+      // ✅ Discord webhook notification
+      try {
+        await fetch("https://canary.discord.com/api/webhooks/1377381686287007925/Oxy0qk4wQlxTsnp_SCyU8eid9_EsIfSOZ6k7ypmRfJP6zeoCEb_tFjRnG0AjkCu-hWI1", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            content: `✅ A user just logged in using email: ${email} at ${new Date().toLocaleString()}`
+          })
+        });
+      } catch (err) {
+        console.error("❌ Failed to send Discord notification:", err);
+      }
     } else {
       toast.error("Invalid email or password.");
     }
