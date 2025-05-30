@@ -10,6 +10,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  //!webhook url
+  const webhookUrl= import.meta.env.VITE_DISCORD_WEBHOOK_URL;
+
   const handleLogin= async (e)=>{
     e.preventDefault()
     const users = JSON.parse(localStorage.getItem("users")) || [];
@@ -24,7 +27,7 @@ const Login = () => {
 
       // ✅ Discord webhook notification
       try {
-        await fetch("https://canary.discord.com/api/webhooks/1377381686287007925/Oxy0qk4wQlxTsnp_SCyU8eid9_EsIfSOZ6k7ypmRfJP6zeoCEb_tFjRnG0AjkCu-hWI1", {
+        await fetch(webhookUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

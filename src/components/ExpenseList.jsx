@@ -21,6 +21,8 @@ const ExpenseList = () => {
   };
 
   const startEditing = (exp) => {
+    console.log("Editing started",exp.title,exp.amount);
+    
     setEditingId(exp.id);
     setEditedTitle(exp.title);
     setEditedAmount(exp.amount);
@@ -87,11 +89,14 @@ const ExpenseList = () => {
                   />
                 </div>
               ) : (
-                <div>
+                <div className="sm:mb-0 mb-3">
                   <p className="font-medium">{exp.title}</p>
                   <p className="text-sm text-gray-500">{exp.date}</p>
                   <p className="text-sm text-gray-600 italic">
                     ₹{exp.amount} ({exp.type})
+                  </p>
+                  <p className="text-sm text-gray-600 italic">Payment Mode{" "}
+                     ({exp.paymentMode})
                   </p>
                 </div>
               )}

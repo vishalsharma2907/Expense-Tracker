@@ -9,6 +9,7 @@ const ExpenseForm = () => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [type,setType]= useState("expense")
+  const [paymentMode,setPaymentMode]= useState("cash")
 
   const dispatch =useDispatch()
 
@@ -28,6 +29,7 @@ const ExpenseForm = () => {
       title,
       amount: parseFloat(amount),
       type,
+      paymentMode,
       date: formattedDate,
     };
 
@@ -37,6 +39,7 @@ const ExpenseForm = () => {
     setTitle("");
     setAmount("");
     setType("expense");
+    setPaymentMode("cash")
   };
 
   return (
@@ -66,6 +69,19 @@ const ExpenseForm = () => {
       >
         <option value="expense">Expense</option>
         <option value="income">Income</option>
+      </select>
+
+      {/* //!select tag for payment */}
+      <select
+        value={paymentMode}
+        onChange={(e) => setPaymentMode(e.target.value)}
+        className="p-2 rounded border border-gray-700 bg-slate-300"
+      >
+        <option value="cash">Cash</option>
+        <option value="upi">Upi</option>
+        <option value="card">Card</option>
+        <option value="netbanking">Net Banking</option>
+        <option value="other">Other</option>
       </select>
 
       <button

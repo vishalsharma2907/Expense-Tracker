@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { ImCross } from "react-icons/im";
 import { FaArrowRight } from 'react-icons/fa';
+import Logo from '../assests/Logo.png'
 
 const Navbar = () => {
 
@@ -19,7 +20,13 @@ const Navbar = () => {
   return (
     <div className='bg-gradient-to-r from-blue-200 to-indigo-600 shadow-md'>
       <div className='max-w-7xl mx-auto px-4 py-3 flex items-center justify-between'>
-        <div className='text-white text-lg font-bold'>Expense Tracker <FaArrowRight className='inline ml-2'/></div>
+        {/* LOGO + title */}
+        <div className='flex items-center gap-2'>
+          <img src={Logo} alt="Logo" className='h-8 w-8 sm:h10 sm:w-10 sm:bg-blue-700'/>
+          <span className='text-white text-lg font-bold sm:text-xl'>
+          Expense Tracker <FaArrowRight className='inline ml-2'/>
+          </span>
+          </div>
         {currentUser && !isOpen && (
         <span className="text-white text-sm font-medium sm:hidden">
             Welcome,<strong className="underline decoration-white">{currentUser.email.split("@")[0]}</strong>
@@ -41,11 +48,12 @@ const Navbar = () => {
           hover:bg-white hover:text-blue-600 hover:shadow-md transition-all duration-300 text-sm sm:text-base">About</NavLink>
         <NavLink to="/expenses" className="block px-3 py-2 rounded text-white border border-white 
           hover:bg-white hover:text-blue-600 hover:shadow-md transition-all duration-300 text-sm sm:text-base">Expense Tracker</NavLink>
-     
+          <NavLink to="/export" className="block px-3 py-2 rounded text-white border border-white 
+          hover:bg-white hover:text-blue-600 hover:shadow-md transition-all duration-300 text-sm sm:text-base">Export </NavLink>
         {!currentUser ? (
         <>
         <NavLink to="/signup" className="block px-3 py-2 rounded text-white border border-white 
-          hover:bg-white hover:text-blue-600 hover:shadow-md transition-all duration-300 text-sm sm:text-base">Sign Up</NavLink>
+          hover:bg-white hover:text-blue-600 hover:shadow-md transition-all duration-300 text-sm sm:text-base ">Sign Up</NavLink>
         <NavLink to="/login" className="block px-3 py-2 rounded text-white border border-white 
           hover:bg-white hover:text-blue-600 hover:shadow-md transition-all duration-300 text-sm sm:text-base">Login</NavLink>
         </>
@@ -56,7 +64,7 @@ const Navbar = () => {
           <button
           onClick={handleLogout}
           className="block px-3 py-2 rounded text-white border border-white 
-          hover:bg-white hover:text-blue-600 hover:shadow-md transition-all duration-300 text-sm sm:text-base"
+          hover:bg-white hover:text-blue-600 hover:shadow-md transition-all duration-300 text-sm sm:text-base text-start"
         >
           Logout
         </button>

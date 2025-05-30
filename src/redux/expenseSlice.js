@@ -35,7 +35,9 @@ const expenseSlice = createSlice({
   reducers: {
     //!Adds a new expense object to the global list.
     addExpense: (state, action) => {
-      state.expenses.push(action.payload);
+      const{id,date,type,amount,paymentMode,title}=action.payload;
+      const newExpense ={id,date,type,amount,paymentMode,title}
+      state.expenses.push(newExpense);
       saveToLocalStorage(state.expenses);
     },
     //!Removes an expense from the list using its id
