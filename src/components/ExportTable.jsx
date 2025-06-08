@@ -48,7 +48,7 @@ const ExportTable = () => {
         return [
           dateTime.toLocaleDateString(),
           dateTime.toLocaleTimeString(),
-          exp.type,
+          `${exp.title}(${exp.type})`,
           exp.amount,
           exp.paymentMode,
         ];
@@ -56,7 +56,7 @@ const ExportTable = () => {
 
       //!add table
       autoTable(doc, {
-        head: [["Date", "Time", "Type", "Amount", "Payment Mode"]],
+        head: [["Date", "Time", "Description"+"(Type)", "Amount", "Payment Mode"]],
         body: rows,
         startY: 30,
       });
@@ -82,7 +82,7 @@ const ExportTable = () => {
         return {
           Date: dateTime.toLocaleDateString(),
           Time: dateTime.toLocaleTimeString(),
-          Type: exp.type,
+          "Description(Type)": `${exp.title}(${exp.type})`,
           Amount: exp.amount,
           "Payment Mode": exp.paymentMode,
         };
@@ -113,7 +113,7 @@ const ExportTable = () => {
         return {
           Date: dateTime.toLocaleDateString(),
           Time: dateTime.toLocaleTimeString(),
-          Type: exp.type,
+          "Description(Type)": `${exp.title}(${exp.type})`,
           Amount: exp.amount,
           "Payment Mode": exp.paymentMode,
         };
@@ -162,7 +162,7 @@ const ExportTable = () => {
             <tr className="bg-gray-200">
               <th className="border px-2 sm:px-4 py-2 text-start">Date</th>
               <th className="border px-2 sm:px-4 py-2 text-start">Time</th>
-              <th className="border px-2 sm:px-4 py-2 text-start">Type</th>
+              <th className="border px-2 sm:px-4 py-2 text-start">Descrption(Type)</th>
               <th className="border px-2 sm:px-4 py-2 text-start">Amount</th>
               <th className="border px-2 sm:px-4 py-2 text-start">
                 Payment Mode
@@ -179,7 +179,7 @@ const ExportTable = () => {
                   {exp.date.slice(12)}
                 </td>
                 <td className="border px-2 sm:px-4 py-2 text-start">
-                  {exp.type}
+                  {exp.title}({exp.type})
                 </td>
                 <td className="border px-2 sm:px-4 py-2 text-start">
                   ₹{exp.amount}
