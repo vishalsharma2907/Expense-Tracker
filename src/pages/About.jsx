@@ -22,7 +22,7 @@ const About = () => {
       </div>
 
       <blockquote className="italic text-gray-600 mt-6 sm:mt-8">
-        `Made with ❤️ by <b>sheeraz Amin Dharekar </b>— because managing money shouldn’t be complicated.
+        `Made with ❤️ by <b>Vishal Sharma </b>— because managing money shouldn’t be complicated.
       </blockquote>
 
       <p className="text-gray-600 mt-8">
