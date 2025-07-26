@@ -1,0 +1,11 @@
+# Docker Compose for Expense tracker
+version: '3'
+services:
+  expense-tracker:
+    build:
+      context: .
+    ports:
+      - "8000:80"
+    container_name: expense-tracker
+    restart: unless-stopped
+

@@ -20,13 +20,13 @@ RUN npm run build
 
 # Stage 2 
 #nginx for deploying
-FROM Nginx:alpine 
+FROM nginx:alpine 
 
 #remove default nginx static content
 RUN rm -rf /usr/share/nginx/html/*
 
 #Copy build output to nginx folder
-COPY --from builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Copy custom nginx config
 COPY nginx.conf /etc/nginx/conf.d/default.conf
