@@ -40,7 +40,7 @@ Deployed live: 👉 [expense-tracker-sheeraz.vercel.app](https://expense-tracker
 ---
 
 ## 👨‍💻 Author
-Made with ❤️ by Sheeraz Amin Dharekar
+Made with ❤️ by Vishal Sharma
 
 ---
 
